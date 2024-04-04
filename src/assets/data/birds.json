@@ -1,0 +1,54 @@
+{
+  "birds": [
+    {
+      "name": "Eagle",
+      "phoneme": "ee-guhl",
+      "image_link": "https://png.pngtree.com/png-vector/20230302/ourmid/pngtree-happy-cartoon-eagle-vector-png-image_6625784.png"
+    },
+    {
+      "name": "Owl",
+      "phoneme": "oul",
+      "image_link": "https://png.pngtree.com/png-vector/20220825/ourmid/pngtree-cute-owl-cartoon-png-image_6124386.png"
+    },
+    {
+      "name": "Robin",
+      "phoneme": "rob-in",
+      "image_link": "https://static.vecteezy.com/system/resources/previews/034/904/356/original/ai-generated-cute-robin-bird-in-a-cartoon-character-ai-generated-free-png.png"
+    },
+    {
+      "name": "Sparrow",
+      "phoneme": "spar-oh",
+      "image_link": "https://img.pikbest.com/origin/10/13/23/59hpIkbEsTU2X.png!w700wp"
+    },
+    {
+      "name": "Hummingbird",
+      "phoneme": "huhm-ing-burd",
+      "image_link": "https://images.vexels.com/media/users/3/145724/isolated/lists/ebb866b0f03e63453ecd892ca5672ab3-hummingbird-cartoon.png"
+    },
+    {
+      "name": "Peacock",
+      "phoneme": "pee-kok",
+      "image_link": "https://static.vecteezy.com/system/resources/previews/017/221/608/original/peacock-cartoon-character-png.png"
+    },
+    {
+      "name": "Swan",
+      "phoneme": "swahn",
+      "image_link": "https://static.vecteezy.com/system/resources/previews/029/891/844/original/swan-in-water-hand-drawn-cartoon-style-illustration-ai-generated-free-png.png"
+    },
+    {
+      "name": "Penguin",
+      "phoneme": "pen-gwin",
+      "image_link": "https://images.vexels.com/media/users/3/140960/isolated/preview/62d6fd568218fe1b7f894932165c9c08-penguin-cartoon.png"
+    },
+    {
+      "name": "Flamingo",
+      "phoneme": "fluh-ming-goh",
+      "image_link": "https://images.vexels.com/media/users/3/265610/isolated/preview/5235d9959a30c7626b8361f10937e49a-flamingo-tropical-bird-cartoon.png"
+    },
+    {
+      "name": "Duck",
+      "phoneme": "duhk",
+      "image_link": "https://static.vecteezy.com/system/resources/thumbnails/001/202/851/small/duck-emoji-no.png"
+    }
+  ]
+}

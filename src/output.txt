@@ -1,0 +1,1648 @@
+File: app/app.component.scss
+
+------------------------
+
+File: app/dashboard/dashboard.page.scss
+
+------------------------
+
+File: app/home/home.page.scss
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+------------------------
+
+File: app/pages/alphabets/alphabets.page.scss
+
+------------------------
+
+File: app/pages/animals/animals.page.scss
+
+------------------------
+
+File: app/pages/birds/birds.page.scss
+
+------------------------
+
+File: app/pages/colors/colors.page.scss
+
+------------------------
+
+File: app/pages/games/games.page.scss
+ion-content {
+    // --background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    --background: url('https: //us.123rf.com/450wm/robuart/robuart1909/robuart190901045/129655909-tree-with-ripe-apple-harvesting-fruit-picking-apple-sweet-product-orchard-element-countryside-plant.jpg?ver=6') !important;
+    background-size: cover;
+}
+
+
+ion-card {
+    margin-bottom: 20px;
+    border-radius: 15px;
+    /* Rounded corners for cards */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow effect */
+}
+
+ion-card-header {
+    background-color: #ffd86f;
+    /* Playful yellow for card headers */
+    color: #333;
+    /* Dark text color */
+    border-radius: 15px 15px 0 0;
+    /* Rounded top corners */
+}
+
+ion-card-content {
+    padding: 15px;
+    /* Padding inside card content */
+}
+
+/* Item Styles */
+ion-item {
+    --background: #f0f3f7;
+    /* White background for items */
+    margin-bottom: 5px;
+    /* Spacing between items */
+}
+
+/* Badge Styles */
+ion-badge {
+    --background: #70c7e2;
+    /* Playful red background for badges */
+    color: #fff;
+    /* White text color */
+    font-size: 14px;
+    /* Adjust badge font size */
+    margin-left: 5px;
+    /* Spacing between badge and text */
+}
+
+/* Title Styles */
+ion-title {
+    font-size: 24px;
+    /* Large font size for titles */
+    font-weight: bold;
+    /* Bold text for titles */
+}
+
+/* Strong Tag Styles */
+strong {
+    font-weight: bold;
+    /* Bold text for strong tags */
+}
+------------------------
+
+File: app/pages/leaderboard/leaderboard.page.scss
+
+------------------------
+
+File: app/pages/numbers/numbers.page.scss
+ion-card{
+    // margin-left: 30%;
+    // margin-right: 30%;
+    padding: 10%;
+}
+------------------------
+
+File: app/pages/objects/objects.page.scss
+
+------------------------
+
+File: app/pages/profile/profile.page.scss
+
+------------------------
+
+File: app/pages/shapes/shapes.page.scss
+
+------------------------
+
+File: app/app.component.html
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>
+
+------------------------
+
+File: app/app.component.scss
+
+------------------------
+
+File: app/app.component.spec.ts
+import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppComponent } from './app.component';
+
+describe('AppComponent', () => {
+  it('should create the app', () => {
+    TestBed.overrideComponent(AppComponent, {
+      add: {
+        imports: [RouterTestingModule]
+      }
+    });
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/app.component.ts
+import { Component } from '@angular/core';
+import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { DataServiceService } from './service/data-service.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  standalone: true,
+  providers: [DataServiceService],
+  imports: [IonApp, IonRouterOutlet, HttpClientModule],
+})
+export class AppComponent {
+  constructor() {}
+}
+
+------------------------
+
+File: app/app.routes.ts
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+  {
+    path: 'home',
+    loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'dashboard',
+    loadComponent: () => import('./dashboard/dashboard.page').then( m => m.DashboardPage)
+  },
+  {
+    path: 'alphabets',
+    loadComponent: () => import('./pages/alphabets/alphabets.page').then( m => m.AlphabetsPage)
+  },
+  {
+    path: 'numbers',
+    loadComponent: () => import('./pages/numbers/numbers.page').then( m => m.NumbersPage)
+  },
+  {
+    path: 'colors',
+    loadComponent: () => import('./pages/colors/colors.page').then( m => m.ColorsPage)
+  },
+  {
+    path: 'animals',
+    loadComponent: () => import('./pages/animals/animals.page').then( m => m.AnimalsPage)
+  },
+  {
+    path: 'birds',
+    loadComponent: () => import('./pages/birds/birds.page').then( m => m.BirdsPage)
+  },
+  {
+    path: 'objects',
+    loadComponent: () => import('./pages/objects/objects.page').then( m => m.ObjectsPage)
+  },
+  {
+    path: 'profile',
+    loadComponent: () => import('./pages/profile/profile.page').then( m => m.ProfilePage)
+  },
+  {
+    path: 'shapes',
+    loadComponent: () => import('./pages/shapes/shapes.page').then( m => m.ShapesPage)
+  },
+  {
+    path: 'leaderboard',
+    loadComponent: () => import('./pages/leaderboard/leaderboard.page').then( m => m.LeaderboardPage)
+  },
+  {
+    path: 'games',
+    loadComponent: () => import('./pages/games/games.page').then( m => m.GamesPage)
+  },
+];
+
+------------------------
+
+File: app/dashboard/dashboard.page.html
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Dashboard</ion-title>
+    <ion-icon icon="people-circle" slot="end" size="large" class="ion-padding-end" (click)="goTo('profile')"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Dashboard</ion-title>
+      <ion-icon icon="people-circle" slot="end" size="large" class="ion-padding-end"
+        (click)="goTo('profile')"></ion-icon>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col (click)="goTo('alphabets')">
+        <ion-card color="warning" class="ion-padding">
+          <ion-card-title><ion-img
+              src="https://www.freepnglogos.com/uploads/abc-png-logo/letters-abc-icons-png-logo-9.png"></ion-img></ion-card-title>
+          <ion-card-header>Learn ABC</ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col (click)="goTo('numbers')">
+        <ion-card color="warning" class="ion-padding">
+          <ion-card-title><ion-img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Icono_123_Metro.png"></ion-img></ion-card-title>
+          <ion-card-header>Learn 1 2 3</ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card color="warning" (click)="goTo('animals')">
+          <ion-card-title><ion-img
+              src="https://parspng.com/wp-content/uploads/2022/08/junglepng.parspng.com-2.png"></ion-img></ion-card-title>
+          <ion-card-header>Learn Animal Names</ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card color="warning" (click)="goTo('objects')">
+          <ion-card-title><ion-img
+              src="https://static.vecteezy.com/system/resources/thumbnails/016/717/262/small/education-object-rocket-illustration-3d-png.png"></ion-img></ion-card-title>
+          <ion-card-header>Learn Object Names</ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card color="warning" (click)="goTo('birds')">
+          <ion-card-title><ion-img
+              src="https://pngfre.com/wp-content/uploads/parrot-png-image-pngfre-2.png"></ion-img></ion-card-title>
+          <ion-card-header>Learn Bird Names</ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card color="warning" (click)="goTo('shapes')">
+          <ion-card-title><ion-img
+              src="https://www.pngall.com/wp-content/uploads/5/Vector-Shape-PNG-Free-Download.png"></ion-img></ion-card-title>
+          <ion-card-header>Learn Shapes</ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card color="warning" (click)="goTo('colors')">
+          <ion-card-title><ion-img src="https://freepngimg.com/thumb/categories/1466.png"></ion-img></ion-card-title>
+          <ion-card-header>Learn Colors</ion-card-header>
+        </ion-card>
+      </ion-col><ion-col>
+        <ion-card color="warning" (click)="goTo('games')">
+          <ion-card-title><ion-img
+              src="https://cdn-icons-png.flaticon.com/512/5930/5930147.png"></ion-img></ion-card-title>
+          <ion-card-header>Play Games</ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+------------------------
+
+File: app/dashboard/dashboard.page.scss
+
+------------------------
+
+File: app/dashboard/dashboard.page.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DashboardPage } from './dashboard.page';
+
+describe('DashboardPage', () => {
+  let component: DashboardPage;
+  let fixture: ComponentFixture<DashboardPage>;
+
+  beforeEach(async(() => {
+    fixture = TestBed.createComponent(DashboardPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/dashboard/dashboard.page.ts
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { addIcons } from 'ionicons';
+import { peopleCircle } from 'ionicons/icons';
+
+@Component({
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.page.html',
+  styleUrls: ['./dashboard.page.scss'],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
+})
+export class DashboardPage implements OnInit {
+  constructor(private router: Router) {
+    addIcons({ peopleCircle });
+  }
+
+  ngOnInit() {}
+  goTo(route: String) {
+    this.router.navigate(['/' + route]);
+  }
+}
+
+------------------------
+
+File: app/home/home.page.html
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <div id="container">
+    <a href="dashboard">Login</a>
+  </div>
+</ion-content>
+------------------------
+
+File: app/home/home.page.scss
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+------------------------
+
+File: app/home/home.page.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { HomePage } from './home.page';
+
+describe('HomePage', () => {
+  let component: HomePage;
+  let fixture: ComponentFixture<HomePage>;
+
+  beforeEach(async () => {
+    fixture = TestBed.createComponent(HomePage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/home/home.page.ts
+import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+} from '@ionic/angular/standalone';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+  standalone: true,
+  imports: [IonicModule],
+})
+export class HomePage {
+  constructor() {}
+}
+
+------------------------
+
+File: app/pages/alphabets/alphabets.page.html
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>alphabets</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">alphabets</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card *ngFor="let i of jsonData" (click)="speak(i.letter)" class="ion-padding">
+    <ion-card-title color="success" class="ion-text-center">{{i.letter}}</ion-card-title>
+  </ion-card>
+</ion-content>
+------------------------
+
+File: app/pages/alphabets/alphabets.page.scss
+
+------------------------
+
+File: app/pages/alphabets/alphabets.page.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AlphabetsPage } from './alphabets.page';
+
+describe('AlphabetsPage', () => {
+  let component: AlphabetsPage;
+  let fixture: ComponentFixture<AlphabetsPage>;
+
+  beforeEach(async(() => {
+    fixture = TestBed.createComponent(AlphabetsPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/pages/alphabets/alphabets.page.ts
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { DataServiceService } from 'src/app/service/data-service.service';
+import { VoiceService } from 'src/app/service/voice.service';
+
+@Component({
+  selector: 'app-alphabets',
+  templateUrl: './alphabets.page.html',
+  styleUrls: ['./alphabets.page.scss'],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
+})
+export class AlphabetsPage implements OnInit {
+  jsonData: any;
+  constructor(
+    private dataService: DataServiceService,
+    private voiceService: VoiceService
+  ) {}
+
+  ngOnInit() {
+    this.dataService.getAlphabets().subscribe((data) => {
+      this.jsonData = data.alphabets;
+      console.log(this.jsonData);
+    });
+  }
+  speak = async (data: string) => {
+    await this.voiceService.speak(data);
+  };
+}
+
+------------------------
+
+File: app/pages/animals/animals.page.html
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>animals</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">animals</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-title style="font-size: 18px; text-align: center;">Click on the Animal to hear the sound</ion-title>
+  <ion-item *ngFor="let i of jsonData" (click)="speak(i.name)">
+    <ion-row>
+      <ion-title>{{i.name}}</ion-title>
+      <ion-card class="ion-padding">
+        <ion-img [src]="i.image_link"></ion-img>
+      </ion-card>
+    </ion-row>
+  </ion-item>
+</ion-content>
+------------------------
+
+File: app/pages/animals/animals.page.scss
+
+------------------------
+
+File: app/pages/animals/animals.page.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AnimalsPage } from './animals.page';
+
+describe('AnimalsPage', () => {
+  let component: AnimalsPage;
+  let fixture: ComponentFixture<AnimalsPage>;
+
+  beforeEach(async(() => {
+    fixture = TestBed.createComponent(AnimalsPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/pages/animals/animals.page.ts
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { DataServiceService } from 'src/app/service/data-service.service';
+import { VoiceService } from 'src/app/service/voice.service';
+
+@Component({
+  selector: 'app-animals',
+  templateUrl: './animals.page.html',
+  styleUrls: ['./animals.page.scss'],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
+})
+export class AnimalsPage implements OnInit {
+  jsonData: any;
+  constructor(
+    private dataService: DataServiceService,
+    private voiceService: VoiceService
+  ) {}
+
+  ngOnInit() {
+    this.dataService.getAnimals().subscribe((data) => {
+      this.jsonData = data.animals;
+      console.log(this.jsonData);
+    });
+  }
+  speak = async (data: string) => {
+    await this.voiceService.speak(data);
+  };
+}
+
+------------------------
+
+File: app/pages/birds/birds.page.html
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>birds</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">birds</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item *ngFor="let i of jsonData" (click)="speak(i.name)">
+    <ion-row>
+      <ion-title>{{i.name}}</ion-title>
+      <ion-card class="ion-padding">
+        <ion-img [src]="i.image_link"></ion-img>
+      </ion-card>
+    </ion-row>
+  </ion-item>
+</ion-content>
+------------------------
+
+File: app/pages/birds/birds.page.scss
+
+------------------------
+
+File: app/pages/birds/birds.page.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BirdsPage } from './birds.page';
+
+describe('BirdsPage', () => {
+  let component: BirdsPage;
+  let fixture: ComponentFixture<BirdsPage>;
+
+  beforeEach(async(() => {
+    fixture = TestBed.createComponent(BirdsPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/pages/birds/birds.page.ts
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { DataServiceService } from 'src/app/service/data-service.service';
+import { VoiceService } from 'src/app/service/voice.service';
+
+@Component({
+  selector: 'app-birds',
+  templateUrl: './birds.page.html',
+  styleUrls: ['./birds.page.scss'],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
+})
+export class BirdsPage implements OnInit {
+  jsonData: any;
+  constructor(
+    private dataService: DataServiceService,
+    private voiceService: VoiceService
+  ) {}
+
+  ngOnInit() {
+    this.dataService.getBirds().subscribe((data) => {
+      this.jsonData = data.birds;
+      console.log(this.jsonData);
+    });
+  }
+  speak = async (data: string) => {
+    await this.voiceService.speak(data);
+  };
+}
+
+------------------------
+
+File: app/pages/colors/colors.page.html
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>colors</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">colors</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-title style="font-size: 18px; text-align: center;">Click on the Color to hear the sound</ion-title>
+  <ion-item *ngFor="let i of jsonData" (click)="speak(i.name)">
+    <ion-row>
+      <ion-card class="ion-padding">
+        <ion-card-title [style]="getColor(i.name)" class="ion-text-center">{{i.name}}</ion-card-title>
+      </ion-card>
+      <ion-title>{{i.name}}</ion-title>
+    </ion-row>
+  </ion-item>
+</ion-content>
+------------------------
+
+File: app/pages/colors/colors.page.scss
+
+------------------------
+
+File: app/pages/colors/colors.page.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ColorsPage } from './colors.page';
+
+describe('ColorsPage', () => {
+  let component: ColorsPage;
+  let fixture: ComponentFixture<ColorsPage>;
+
+  beforeEach(async(() => {
+    fixture = TestBed.createComponent(ColorsPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/pages/colors/colors.page.ts
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { DataServiceService } from 'src/app/service/data-service.service';
+import { VoiceService } from 'src/app/service/voice.service';
+
+@Component({
+  selector: 'app-colors',
+  templateUrl: './colors.page.html',
+  styleUrls: ['./colors.page.scss'],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
+})
+export class ColorsPage implements OnInit {
+  jsonData: any;
+  constructor(
+    private dataService: DataServiceService,
+    private voiceService: VoiceService
+  ) {}
+
+  ngOnInit() {
+    this.dataService.getColors().subscribe((data) => {
+      this.jsonData = data.colors;
+      console.log(this.jsonData);
+    });
+  }
+  speak = async (data: string) => {
+    await this.voiceService.speak(data);
+  };
+
+  getColor(color: string): string {
+    return 'color:' + color;
+  }
+}
+
+------------------------
+
+File: app/pages/games/games.page.html
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="tertiary">
+      Practice
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Practice</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title> Header </ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+<ion-content [fullscreen]="true" class="ion-padding">
+  <h1></h1>
+  <!-- <iframe width="410" height="200" src="https://www.youtube.com/embed/XKe-uaX_H00" title="Moose Math - By Duck Duck Moose" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>"  -->
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title color="tertiary">Daily Quiz 🗒️</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      Q.1 Which of the following is a balloon?
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item id="question1-correct" (click)="increaseNumber()">🎈🎈🎈🎈</ion-item>
+      <ion-item id="question1-wrong" (click)="decreaseNumber()">🚗🚗🚗</ion-item>
+      <ion-item id="question1-wrong" (click)="decreaseNumber()">🍪🍪🍪🍪🍪</ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-alert trigger="question1-correct" header="Correct" message="The answer is balloon"></ion-alert>
+  <ion-alert trigger="question1-wrong" header="Wrong" message="The answer is balloon"></ion-alert>
+
+  <ion-card>
+    <ion-card-header>
+      Q.2 Which shape blue color?
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item id="question2-correct" (click)="increaseNumber()">
+          Shape: 🟦
+          <ion-badge slot="end">Square</ion-badge>
+        </ion-item>
+        <ion-item id="question2-wrong" (click)="decreaseNumber()">
+          Shape: 🔺
+          <ion-badge slot="end">Triangle</ion-badge>
+        </ion-item>
+        <ion-item id="question2-wrong" (click)="decreaseNumber()">
+          Shape: ⭕
+          <ion-badge slot="end">Circle</ion-badge>
+        </ion-item>
+        <ion-item id="question2-wrong" (click)="decreaseNumber()">
+          Shape: 🟩
+          <ion-badge slot="end">Rectangle</ion-badge>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-alert trigger="question2-correct" header="Correct" message="The answer is 🟦 Square"></ion-alert>
+    <ion-alert trigger="question2-wrong" header="Wrong" message="The answer is 🟦 Square"></ion-alert>
+    <ion-card-header>
+      Q.3 Number Recognition
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item id="question3-correct" (click)="increaseNumber()">
+          Number: <strong>1</strong>
+          <ion-badge slot="end">One</ion-badge>
+        </ion-item>
+        <ion-item id="question3-wrong" (click)="decreaseNumber()">
+          Number: <strong>A</strong>
+          <ion-badge slot="end">A</ion-badge>
+        </ion-item>
+        <ion-item id="question3-wrong" (click)="decreaseNumber()">
+          Number: <strong>🐈</strong>
+          <ion-badge slot="end">Cat</ion-badge>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-alert trigger="question3-correct" header="Correct" message="The answer is 1 One"></ion-alert>
+  <ion-alert trigger="question3-wrong" header="Wrong" message="The answer is 1 One"></ion-alert>
+  Your Score is {{score}}/3
+  <!-- <ion-card>
+    <ion-card-header>
+      Animal Sounds
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item (click)="playAnimalSound('Moo')">Sound: Moo 🐄</ion-item>
+        <ion-item (click)="playAnimalSound('Woof')">Sound: Woof 🐶</ion-item>
+        <ion-item (click)="playAnimalSound('Meow')">Sound: Meow 🐱</ion-item>
+        <ion-item (click)="playAnimalSound('Quack')">Sound: Quack 🦆</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content> -->
+
+  <!--    
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title> Footer </ion-title>
+    </ion-toolbar>
+  </ion-footer> -->
+
+
+</ion-content>
+------------------------
+
+File: app/pages/games/games.page.scss
+ion-content {
+    // --background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    --background: url('https: //us.123rf.com/450wm/robuart/robuart1909/robuart190901045/129655909-tree-with-ripe-apple-harvesting-fruit-picking-apple-sweet-product-orchard-element-countryside-plant.jpg?ver=6') !important;
+    background-size: cover;
+}
+
+
+ion-card {
+    margin-bottom: 20px;
+    border-radius: 15px;
+    /* Rounded corners for cards */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow effect */
+}
+
+ion-card-header {
+    background-color: #ffd86f;
+    /* Playful yellow for card headers */
+    color: #333;
+    /* Dark text color */
+    border-radius: 15px 15px 0 0;
+    /* Rounded top corners */
+}
+
+ion-card-content {
+    padding: 15px;
+    /* Padding inside card content */
+}
+
+/* Item Styles */
+ion-item {
+    --background: #f0f3f7;
+    /* White background for items */
+    margin-bottom: 5px;
+    /* Spacing between items */
+}
+
+/* Badge Styles */
+ion-badge {
+    --background: #70c7e2;
+    /* Playful red background for badges */
+    color: #fff;
+    /* White text color */
+    font-size: 14px;
+    /* Adjust badge font size */
+    margin-left: 5px;
+    /* Spacing between badge and text */
+}
+
+/* Title Styles */
+ion-title {
+    font-size: 24px;
+    /* Large font size for titles */
+    font-weight: bold;
+    /* Bold text for titles */
+}
+
+/* Strong Tag Styles */
+strong {
+    font-weight: bold;
+    /* Bold text for strong tags */
+}
+------------------------
+
+File: app/pages/games/games.page.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { GamesPage } from './games.page';
+
+describe('GamesPage', () => {
+  let component: GamesPage;
+  let fixture: ComponentFixture<GamesPage>;
+
+  beforeEach(async(() => {
+    fixture = TestBed.createComponent(GamesPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/pages/games/games.page.ts
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+
+@Component({
+  selector: 'app-games',
+  templateUrl: './games.page.html',
+  styleUrls: ['./games.page.scss'],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
+})
+export class GamesPage implements OnInit {
+  constructor() {}
+  score: number = 0;
+  increaseNumber() {
+    this.score = this.score + 1;
+  }
+  decreaseNumber() {
+    this.score = this.score - 1;
+  }
+
+  ngOnInit() {}
+}
+
+------------------------
+
+File: app/pages/leaderboard/leaderboard.page.html
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Leaderboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="leaderboard-page">
+  <div class="background"></div>
+  <div class="curved-text">
+    <span>🌟L</span>
+    <span>E</span>
+    <span>A</span>
+    <span>D</span>
+    <span>E</span>
+    <span>R</span>
+    <span> </span>
+    <span>B</span>
+    <span>O</span>
+    <span>A</span>
+    <span>R</span>
+    <span>D🌟</span>
+  </div>
+  <ion-list lines="full" class="leaderboard-list">
+    <!-- <ion-header class="leaderboard-header">
+      <ion-toolbar>
+        <ion-title>Leader Board🌟</ion-title>
+        
+        
+      </ion-toolbar>
+    </ion-header> -->
+
+    <ion-item *ngFor="let player of players" class="leaderboard-item">
+      <ion-avatar slot="start">
+        <img src="https://th.bing.com/th/id/OIP.WliSPBi-erj-ntxEVn9VeAHaHa?pid=ImgDet&w=179&h=179&c=7&dpr=1.3"
+          alt="Avatar">
+      </ion-avatar>
+      <ion-label>{{ player.name }}</ion-label>
+      <ion-badge>{{ player.score }}</ion-badge>
+    </ion-item>
+  </ion-list>
+</ion-content>
+------------------------
+
+File: app/pages/leaderboard/leaderboard.page.scss
+
+------------------------
+
+File: app/pages/leaderboard/leaderboard.page.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LeaderboardPage } from './leaderboard.page';
+
+describe('LeaderboardPage', () => {
+  let component: LeaderboardPage;
+  let fixture: ComponentFixture<LeaderboardPage>;
+
+  beforeEach(async(() => {
+    fixture = TestBed.createComponent(LeaderboardPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/pages/leaderboard/leaderboard.page.ts
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+
+@Component({
+  selector: 'app-leaderboard',
+  templateUrl: './leaderboard.page.html',
+  styleUrls: ['./leaderboard.page.scss'],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
+})
+export class LeaderboardPage implements OnInit {
+  players: { name: string; score: number }[] = [
+    { name: '1.Tom', score: 10 },
+    { name: '2.Anna', score: 5 },
+    { name: '3.Tae', score: 7 },
+    { name: '4.Taylor', score: 5 },
+    { name: '5.Joe', score: 4 },
+    { name: '6.Suzy', score: 4 },
+  ];
+
+  constructor() {}
+
+  ngOnInit() {}
+}
+
+------------------------
+
+File: app/pages/numbers/numbers.page.html
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>numbers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">numbers</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-title style="font-size: 18px; text-align: center;">Click on the number to hear the sound</ion-title>
+  <ion-item *ngFor="let i of jsonData" (click)="speak(i.word)">
+    <ion-card class="ion-padding">
+      <ion-card-title color="success" class="ion-text-center">{{i.number}}</ion-card-title>
+    </ion-card>
+    <ion-title>{{i.word}}</ion-title>
+  </ion-item>
+</ion-content>
+------------------------
+
+File: app/pages/numbers/numbers.page.scss
+ion-card{
+    // margin-left: 30%;
+    // margin-right: 30%;
+    padding: 10%;
+}
+------------------------
+
+File: app/pages/numbers/numbers.page.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NumbersPage } from './numbers.page';
+
+describe('NumbersPage', () => {
+  let component: NumbersPage;
+  let fixture: ComponentFixture<NumbersPage>;
+
+  beforeEach(async(() => {
+    fixture = TestBed.createComponent(NumbersPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/pages/numbers/numbers.page.ts
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { VoiceService } from 'src/app/service/voice.service';
+import { DataServiceService } from 'src/app/service/data-service.service';
+
+@Component({
+  selector: 'app-numbers',
+  templateUrl: './numbers.page.html',
+  styleUrls: ['./numbers.page.scss'],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
+})
+export class NumbersPage implements OnInit {
+  jsonData: any;
+  constructor(
+    private dataService: DataServiceService,
+    private voiceService: VoiceService
+  ) {}
+
+  ngOnInit() {
+    this.dataService.getNumbers().subscribe((data) => {
+      this.jsonData = data.numbers;
+      console.log(this.jsonData);
+    });
+  }
+  speak = async (data: string) => {
+    await this.voiceService.speak(data);
+  };
+}
+
+------------------------
+
+File: app/pages/objects/objects.page.html
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>objects</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">objects</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item *ngFor="let i of jsonData" (click)="speak(i.name)">
+    <ion-row>
+      <ion-title>{{i.name}}</ion-title>
+      <ion-card class="ion-padding">
+        <ion-img [src]="i.image_link"></ion-img>
+      </ion-card>
+    </ion-row>
+  </ion-item>
+</ion-content>
+------------------------
+
+File: app/pages/objects/objects.page.scss
+
+------------------------
+
+File: app/pages/objects/objects.page.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ObjectsPage } from './objects.page';
+
+describe('ObjectsPage', () => {
+  let component: ObjectsPage;
+  let fixture: ComponentFixture<ObjectsPage>;
+
+  beforeEach(async(() => {
+    fixture = TestBed.createComponent(ObjectsPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/pages/objects/objects.page.ts
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { DataServiceService } from 'src/app/service/data-service.service';
+import { VoiceService } from 'src/app/service/voice.service';
+
+@Component({
+  selector: 'app-objects',
+  templateUrl: './objects.page.html',
+  styleUrls: ['./objects.page.scss'],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
+})
+export class ObjectsPage implements OnInit {
+  jsonData: any;
+  constructor(
+    private dataService: DataServiceService,
+    private voiceService: VoiceService
+  ) {}
+
+  ngOnInit() {
+    this.dataService.getObjects().subscribe((data) => {
+      this.jsonData = data.objects;
+      console.log(this.jsonData);
+    });
+  }
+  speak = async (data: string) => {
+    await this.voiceService.speak(data);
+  };
+}
+
+------------------------
+
+File: app/pages/profile/profile.page.html
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-avatar class="profile-picture">
+    <img src="https://img.freepik.com/premium-vector/cute-boy-cartoon-character_1639-50086.jpg" alt="Profile Picture">
+  </ion-avatar>
+
+
+  <ion-item>
+    <ion-label>Name:</ion-label>
+    <ion-input type="text" [(ngModel)]="userName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Age:</ion-label>
+    <ion-input type="text" [(ngModel)]="userAge"></ion-input>
+  </ion-item>
+
+
+  <h2>Achievements 🏆</h2>
+  <ion-list>
+    <ion-item *ngFor="let achievement of achievements">
+      {{ achievement }}
+    </ion-item>
+  </ion-list>
+
+
+  <h2>Favorite Activities </h2>
+  <ion-list>
+    <ion-item>
+      <ion-label>Favorite Color:</ion-label>
+      <ion-input type="text" [(ngModel)]="favoriteColor "></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Favorite Animal Sound:</ion-label>
+      <ion-input type="text" [(ngModel)]="favoriteAnimalSound"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Favorite Shape:</ion-label>
+      <ion-input type="text" [(ngModel)]="favoriteShape"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <h2>Progress Tracking</h2>
+  <ion-list>
+    <ion-item>
+      <ion-label>Completion Percentage</ion-label>
+      <ion-progress-bar [value]="calculateCompletionPercentage() / 100"></ion-progress-bar>
+    </ion-item>
+  </ion-list>
+</ion-content>
+------------------------
+
+File: app/pages/profile/profile.page.scss
+
+------------------------
+
+File: app/pages/profile/profile.page.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ProfilePage } from './profile.page';
+
+describe('ProfilePage', () => {
+  let component: ProfilePage;
+  let fixture: ComponentFixture<ProfilePage>;
+
+  beforeEach(async(() => {
+    fixture = TestBed.createComponent(ProfilePage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/pages/profile/profile.page.ts
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+
+@Component({
+  selector: 'app-profile',
+  templateUrl: './profile.page.html',
+  styleUrls: ['./profile.page.scss'],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
+})
+export class ProfilePage implements OnInit {
+  userName: string = 'Shoyab';
+  userAge: number = 22; //
+  favoriteColor: string = 'Red 🔴';
+  favoriteAnimalSound: string = 'Mew 🐈';
+  favoriteShape: string = 'Dodecagon ⭕'; //
+
+  achievements: string[] = [
+    'Color Master 🎓',
+    'Number Ninja 🎓',
+    'Shape Explorer 🎓',
+    'Alphabet Champion 🎓',
+  ];
+
+  totalTasks = 10;
+  completedTasks = 7;
+  calculateCompletionPercentage(): number {
+    return (this.completedTasks / this.totalTasks) * 100;
+  }
+  constructor() {}
+
+  ngOnInit() {}
+}
+
+------------------------
+
+File: app/pages/shapes/shapes.page.html
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>shapes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">shapes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item *ngFor="let i of jsonData" (click)="speak(i.name)">
+    <ion-row>
+      <ion-title>{{i.name}}</ion-title>
+      <ion-card class="ion-padding">
+        <ion-img [src]="i.image_link"></ion-img>
+      </ion-card>
+    </ion-row>
+  </ion-item>
+</ion-content>
+------------------------
+
+File: app/pages/shapes/shapes.page.scss
+
+------------------------
+
+File: app/pages/shapes/shapes.page.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ShapesPage } from './shapes.page';
+
+describe('ShapesPage', () => {
+  let component: ShapesPage;
+  let fixture: ComponentFixture<ShapesPage>;
+
+  beforeEach(async(() => {
+    fixture = TestBed.createComponent(ShapesPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/pages/shapes/shapes.page.ts
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { DataServiceService } from 'src/app/service/data-service.service';
+import { VoiceService } from 'src/app/service/voice.service';
+
+@Component({
+  selector: 'app-shapes',
+  templateUrl: './shapes.page.html',
+  styleUrls: ['./shapes.page.scss'],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
+})
+export class ShapesPage implements OnInit {
+  jsonData: any;
+  constructor(
+    private dataService: DataServiceService,
+    private voiceService: VoiceService
+  ) {}
+
+  ngOnInit() {
+    this.dataService.getShapes().subscribe((data) => {
+      this.jsonData = data.shapes;
+      console.log(this.jsonData);
+    });
+  }
+  speak = async (data: string) => {
+    await this.voiceService.speak(data);
+  };
+}
+
+------------------------
+
+File: app/service/data-service.service.spec.ts
+import { TestBed } from '@angular/core/testing';
+
+import { DataServiceService } from './data-service.service';
+
+describe('DataServiceService', () => {
+  let service: DataServiceService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(DataServiceService);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/service/data-service.service.ts
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class DataServiceService {
+  constructor(private http: HttpClient) {}
+  getAnimals(): Observable<any> {
+    return this.http.get<any>('assets/data/animals.json');
+  }
+
+  // Function to fetch colors data
+  getColors(): Observable<any> {
+    return this.http.get<any>('assets/data/colors.json');
+  }
+
+  getNumbers(): Observable<any> {
+    return this.http.get<any>('assets/data/numbers.json');
+  }
+
+  getAlphabets(): Observable<any> {
+    return this.http.get<any>('assets/data/alphabets.json');
+  }
+
+  // Function to fetch shapes data
+  getShapes(): Observable<any> {
+    return this.http.get<any>('assets/data/shapes.json');
+  }
+
+  // Function to fetch objects data
+  getObjects(): Observable<any> {
+    return this.http.get<any>('assets/data/objects.json');
+  }
+
+  getBirds(): Observable<any> {
+    return this.http.get<any>('assets/data/birds.json');
+  }
+}
+
+------------------------
+
+File: app/service/voice.service.spec.ts
+import { TestBed } from '@angular/core/testing';
+
+import { VoiceService } from './voice.service';
+
+describe('VoiceService', () => {
+  let service: VoiceService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(VoiceService);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+});
+
+------------------------
+
+File: app/service/voice.service.ts
+import { Injectable } from '@angular/core';
+import { TextToSpeech } from '@capacitor-community/text-to-speech';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class VoiceService {
+  constructor() {}
+  speak = async (toSpeak: string) => {
+    await TextToSpeech.speak({
+      text: toSpeak,
+      lang: 'hi-IN',
+      rate: 1.0,
+      pitch: 0.5,
+      volume: 1.0,
+      category: 'ambient',
+    });
+  };
+  stop = async () => {
+    await TextToSpeech.stop();
+  };
+}
+
+------------------------
+

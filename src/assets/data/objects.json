@@ -1,0 +1,54 @@
+{
+  "objects": [
+    {
+      "name": "Chair",
+      "phoneme": "chair",
+      "image_link": "https://static.vecteezy.com/system/resources/previews/022/786/083/original/chair-graphic-clipart-design-free-png.png"
+    },
+    {
+      "name": "Table",
+      "phoneme": "tey-buhl",
+      "image_link": "https://static.vecteezy.com/system/resources/previews/009/305/622/non_2x/wooden-table-clipart-design-illustration-free-png.png"
+    },
+    {
+      "name": "Lamp",
+      "phoneme": "https://static.vecteezy.com/system/resources/previews/024/996/820/non_2x/sleeping-time-objects-clip-art-cartoon-lamp-free-png.png",
+      "image_link": "https://example.com/lamp.png"
+    },
+    {
+      "name": "Book",
+      "phoneme": "book",
+      "image_link": "https://static.vecteezy.com/system/resources/previews/024/996/820/non_2x/sleeping-time-objects-clip-art-cartoon-lamp-free-png.png"
+    },
+    {
+      "name": "Car",
+      "phoneme": "kar",
+      "image_link": "https://static.vecteezy.com/system/resources/previews/018/732/209/non_2x/cartoon-cute-red-colour-car-with-happy-smiling-character-illustration-png.png"
+    },
+    {
+      "name": "House",
+      "phoneme": "hous",
+      "image_link": "https://png.pngtree.com/png-vector/20221108/ourmid/pngtree-cartoon-house-illustration-png-image_6434928.png"
+    },
+    {
+      "name": "Computer",
+      "phoneme": "kuhm-pyoo-ter",
+      "image_link": "https://freesvg.org/img/computerpic.png"
+    },
+    {
+      "name": "Telephone",
+      "phoneme": "tel-uh-fohn",
+      "image_link": "https://png.pngtree.com/png-clipart/20220103/original/pngtree-telephone-cartoon-hand-drawn-wind-red-telephone-png-image_7020177.png"
+    },
+    {
+      "name": "Cup",
+      "phoneme": "kuhp",
+      "image_link": "https://png.pngtree.com/png-clipart/20220116/original/pngtree-cartoon-coffee-cup-element-pattern-png-image_7107861.png"
+    },
+    {
+      "name": "Shoes",
+      "phoneme": "shooz",
+      "image_link": "https://png.pngtree.com/png-clipart/20220805/ourmid/pngtree-purple-shoes-cartoon-png-image_6100006.png"
+    }
+  ]
+}

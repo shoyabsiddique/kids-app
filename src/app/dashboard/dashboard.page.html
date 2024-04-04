@@ -1,0 +1,81 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Dashboard</ion-title>
+    <ion-icon icon="people-circle" slot="end" size="large" class="ion-padding-end" (click)="goTo('profile')"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Dashboard</ion-title>
+      <ion-icon icon="people-circle" slot="end" size="large" class="ion-padding-end"
+        (click)="goTo('profile')"></ion-icon>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col (click)="goTo('alphabets')">
+        <ion-card color="warning" class="ion-padding">
+          <ion-card-title><ion-img
+              src="https://www.freepnglogos.com/uploads/abc-png-logo/letters-abc-icons-png-logo-9.png"></ion-img></ion-card-title>
+          <ion-card-header>Learn ABC</ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col (click)="goTo('numbers')">
+        <ion-card color="warning" class="ion-padding">
+          <ion-card-title><ion-img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Icono_123_Metro.png"></ion-img></ion-card-title>
+          <ion-card-header>Learn 1 2 3</ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card color="warning" (click)="goTo('animals')">
+          <ion-card-title><ion-img
+              src="https://parspng.com/wp-content/uploads/2022/08/junglepng.parspng.com-2.png"></ion-img></ion-card-title>
+          <ion-card-header>Learn Animal Names</ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card color="warning" (click)="goTo('objects')">
+          <ion-card-title><ion-img
+              src="https://static.vecteezy.com/system/resources/thumbnails/016/717/262/small/education-object-rocket-illustration-3d-png.png"></ion-img></ion-card-title>
+          <ion-card-header>Learn Object Names</ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card color="warning" (click)="goTo('birds')">
+          <ion-card-title><ion-img
+              src="https://pngfre.com/wp-content/uploads/parrot-png-image-pngfre-2.png"></ion-img></ion-card-title>
+          <ion-card-header>Learn Bird Names</ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card color="warning" (click)="goTo('shapes')">
+          <ion-card-title><ion-img
+              src="https://www.pngall.com/wp-content/uploads/5/Vector-Shape-PNG-Free-Download.png"></ion-img></ion-card-title>
+          <ion-card-header>Learn Shapes</ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card color="warning" (click)="goTo('colors')">
+          <ion-card-title><ion-img src="https://freepngimg.com/thumb/categories/1466.png"></ion-img></ion-card-title>
+          <ion-card-header>Learn Colors</ion-card-header>
+        </ion-card>
+      </ion-col><ion-col>
+        <ion-card color="warning" (click)="goTo('games')">
+          <ion-card-title><ion-img
+              src="https://cdn-icons-png.flaticon.com/512/5930/5930147.png"></ion-img></ion-card-title>
+          <ion-card-header>Play Games</ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

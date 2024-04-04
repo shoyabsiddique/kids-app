@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-avatar class="profile-picture">
+    <img src="https://img.freepik.com/premium-vector/cute-boy-cartoon-character_1639-50086.jpg" alt="Profile Picture">
+  </ion-avatar>
+
+
+  <ion-item>
+    <ion-label>Name:</ion-label>
+    <ion-input type="text" [(ngModel)]="userName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Age:</ion-label>
+    <ion-input type="text" [(ngModel)]="userAge"></ion-input>
+  </ion-item>
+
+
+  <h2>Achievements 🏆</h2>
+  <ion-list>
+    <ion-item *ngFor="let achievement of achievements">
+      {{ achievement }}
+    </ion-item>
+  </ion-list>
+
+
+  <h2>Favorite Activities </h2>
+  <ion-list>
+    <ion-item>
+      <ion-label>Favorite Color:</ion-label>
+      <ion-input type="text" [(ngModel)]="favoriteColor "></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Favorite Animal Sound:</ion-label>
+      <ion-input type="text" [(ngModel)]="favoriteAnimalSound"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Favorite Shape:</ion-label>
+      <ion-input type="text" [(ngModel)]="favoriteShape"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <h2>Progress Tracking</h2>
+  <ion-list>
+    <ion-item>
+      <ion-label>Completion Percentage</ion-label>
+      <ion-progress-bar [value]="calculateCompletionPercentage() / 100"></ion-progress-bar>
+    </ion-item>
+  </ion-list>
+</ion-content>

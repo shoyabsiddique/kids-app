@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>objects</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">objects</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item *ngFor="let i of jsonData" (click)="speak(i.name)">
+    <ion-row>
+      <ion-title>{{i.name}}</ion-title>
+      <ion-card class="ion-padding">
+        <ion-img [src]="i.image_link"></ion-img>
+      </ion-card>
+    </ion-row>
+  </ion-item>
+</ion-content>

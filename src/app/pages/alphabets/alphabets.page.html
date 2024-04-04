@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>alphabets</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">alphabets</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card *ngFor="let i of jsonData" (click)="speak(i.letter)" class="ion-padding">
+    <ion-card-title color="success" class="ion-text-center">{{i.letter}}</ion-card-title>
+  </ion-card>
+</ion-content>

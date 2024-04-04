@@ -1,0 +1,134 @@
+{
+  "alphabets": [
+    {
+      "letter": "A",
+      "phoneme": "A",
+      "image_link": "https://example.com/A.png"
+    },
+    {
+      "letter": "B",
+      "phoneme": "B",
+      "image_link": "https://example.com/B.png"
+    },
+    {
+      "letter": "C",
+      "phoneme": "C",
+      "image_link": "https://example.com/C.png"
+    },
+    {
+      "letter": "D",
+      "phoneme": "D",
+      "image_link": "https://example.com/D.png"
+    },
+    {
+      "letter": "E",
+      "phoneme": "iy",
+      "image_link": "https://example.com/E.png"
+    },
+    {
+      "letter": "F",
+      "phoneme": "f",
+      "image_link": "https://example.com/F.png"
+    },
+    {
+      "letter": "G",
+      "phoneme": "j",
+      "image_link": "https://example.com/G.png"
+    },
+    {
+      "letter": "H",
+      "phoneme": "eych",
+      "image_link": "https://example.com/H.png"
+    },
+    {
+      "letter": "I",
+      "phoneme": "ay",
+      "image_link": "https://example.com/I.png"
+    },
+    {
+      "letter": "J",
+      "phoneme": "jey",
+      "image_link": "https://example.com/J.png"
+    },
+    {
+      "letter": "K",
+      "phoneme": "key",
+      "image_link": "https://example.com/K.png"
+    },
+    {
+      "letter": "L",
+      "phoneme": "el",
+      "image_link": "https://example.com/L.png"
+    },
+    {
+      "letter": "M",
+      "phoneme": "em",
+      "image_link": "https://example.com/M.png"
+    },
+    {
+      "letter": "N",
+      "phoneme": "en",
+      "image_link": "https://example.com/N.png"
+    },
+    {
+      "letter": "O",
+      "phoneme": "ow",
+      "image_link": "https://example.com/O.png"
+    },
+    {
+      "letter": "P",
+      "phoneme": "p",
+      "image_link": "https://example.com/P.png"
+    },
+    {
+      "letter": "Q",
+      "phoneme": "kyuw",
+      "image_link": "https://example.com/Q.png"
+    },
+    {
+      "letter": "R",
+      "phoneme": "ahr",
+      "image_link": "https://example.com/R.png"
+    },
+    {
+      "letter": "S",
+      "phoneme": "es",
+      "image_link": "https://example.com/S.png"
+    },
+    {
+      "letter": "T",
+      "phoneme": "tee",
+      "image_link": "https://example.com/T.png"
+    },
+    {
+      "letter": "U",
+      "phoneme": "yoo",
+      "image_link": "https://example.com/U.png"
+    },
+    {
+      "letter": "V",
+      "phoneme": "vee",
+      "image_link": "https://example.com/V.png"
+    },
+    {
+      "letter": "W",
+      "phoneme": "dubelyoo",
+      "image_link": "https://example.com/W.png"
+    },
+    {
+      "letter": "X",
+      "phoneme": "eks",
+      "image_link": "https://example.com/X.png"
+    },
+    {
+      "letter": "Y",
+      "phoneme": "way",
+      "image_link": "https://example.com/Y.png"
+    },
+    {
+      "letter": "Z",
+      "phoneme": "zed",
+      "image_link": "https://example.com/Z.png"
+    }
+  ]
+}

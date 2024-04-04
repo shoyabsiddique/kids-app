@@ -1,0 +1,62 @@
+ion-content {
+    // --background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    --background: url('https: //us.123rf.com/450wm/robuart/robuart1909/robuart190901045/129655909-tree-with-ripe-apple-harvesting-fruit-picking-apple-sweet-product-orchard-element-countryside-plant.jpg?ver=6') !important;
+    background-size: cover;
+}
+
+
+ion-card {
+    margin-bottom: 20px;
+    border-radius: 15px;
+    /* Rounded corners for cards */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow effect */
+}
+
+ion-card-header {
+    background-color: #ffd86f;
+    /* Playful yellow for card headers */
+    color: #333;
+    /* Dark text color */
+    border-radius: 15px 15px 0 0;
+    /* Rounded top corners */
+}
+
+ion-card-content {
+    padding: 15px;
+    /* Padding inside card content */
+}
+
+/* Item Styles */
+ion-item {
+    --background: #f0f3f7;
+    /* White background for items */
+    margin-bottom: 5px;
+    /* Spacing between items */
+}
+
+/* Badge Styles */
+ion-badge {
+    --background: #70c7e2;
+    /* Playful red background for badges */
+    color: #fff;
+    /* White text color */
+    font-size: 14px;
+    /* Adjust badge font size */
+    margin-left: 5px;
+    /* Spacing between badge and text */
+}
+
+/* Title Styles */
+ion-title {
+    font-size: 24px;
+    /* Large font size for titles */
+    font-weight: bold;
+    /* Bold text for titles */
+}
+
+/* Strong Tag Styles */
+strong {
+    font-weight: bold;
+    /* Bold text for strong tags */
+}

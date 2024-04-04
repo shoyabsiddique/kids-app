@@ -1,0 +1,118 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="tertiary">
+      Practice
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Practice</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title> Header </ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+<ion-content [fullscreen]="true" class="ion-padding">
+  <h1></h1>
+  <!-- <iframe width="410" height="200" src="https://www.youtube.com/embed/XKe-uaX_H00" title="Moose Math - By Duck Duck Moose" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>"  -->
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title color="tertiary">Daily Quiz 🗒️</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      Q.1 Which of the following is a balloon?
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item id="question1-correct" (click)="increaseNumber()">🎈🎈🎈🎈</ion-item>
+      <ion-item id="question1-wrong" (click)="decreaseNumber()">🚗🚗🚗</ion-item>
+      <ion-item id="question1-wrong" (click)="decreaseNumber()">🍪🍪🍪🍪🍪</ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-alert trigger="question1-correct" header="Correct" message="The answer is balloon"></ion-alert>
+  <ion-alert trigger="question1-wrong" header="Wrong" message="The answer is balloon"></ion-alert>
+
+  <ion-card>
+    <ion-card-header>
+      Q.2 Which shape blue color?
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item id="question2-correct" (click)="increaseNumber()">
+          Shape: 🟦
+          <ion-badge slot="end">Square</ion-badge>
+        </ion-item>
+        <ion-item id="question2-wrong" (click)="decreaseNumber()">
+          Shape: 🔺
+          <ion-badge slot="end">Triangle</ion-badge>
+        </ion-item>
+        <ion-item id="question2-wrong" (click)="decreaseNumber()">
+          Shape: ⭕
+          <ion-badge slot="end">Circle</ion-badge>
+        </ion-item>
+        <ion-item id="question2-wrong" (click)="decreaseNumber()">
+          Shape: 🟩
+          <ion-badge slot="end">Rectangle</ion-badge>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-alert trigger="question2-correct" header="Correct" message="The answer is 🟦 Square"></ion-alert>
+    <ion-alert trigger="question2-wrong" header="Wrong" message="The answer is 🟦 Square"></ion-alert>
+    <ion-card-header>
+      Q.3 Number Recognition
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item id="question3-correct" (click)="increaseNumber()">
+          Number: <strong>1</strong>
+          <ion-badge slot="end">One</ion-badge>
+        </ion-item>
+        <ion-item id="question3-wrong" (click)="decreaseNumber()">
+          Number: <strong>A</strong>
+          <ion-badge slot="end">A</ion-badge>
+        </ion-item>
+        <ion-item id="question3-wrong" (click)="decreaseNumber()">
+          Number: <strong>🐈</strong>
+          <ion-badge slot="end">Cat</ion-badge>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-alert trigger="question3-correct" header="Correct" message="The answer is 1 One"></ion-alert>
+  <ion-alert trigger="question3-wrong" header="Wrong" message="The answer is 1 One"></ion-alert>
+  Your Score is {{score}}/3
+  <!-- <ion-card>
+    <ion-card-header>
+      Animal Sounds
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item (click)="playAnimalSound('Moo')">Sound: Moo 🐄</ion-item>
+        <ion-item (click)="playAnimalSound('Woof')">Sound: Woof 🐶</ion-item>
+        <ion-item (click)="playAnimalSound('Meow')">Sound: Meow 🐱</ion-item>
+        <ion-item (click)="playAnimalSound('Quack')">Sound: Quack 🦆</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content> -->
+
+  <!--    
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title> Footer </ion-title>
+    </ion-toolbar>
+  </ion-footer> -->
+
+
+</ion-content>

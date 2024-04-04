@@ -1,0 +1,54 @@
+{
+  "animals": [
+    {
+      "name": "Lion",
+      "phoneme": "ly-uhn",
+      "image_link": "https://png.pngtree.com/png-clipart/20231016/original/pngtree-lion-cartoon-character-png-image_13322836.png"
+    },
+    {
+      "name": "Elephant",
+      "phoneme": "el-uh-fuhnt",
+      "image_link": "https://parspng.com/wp-content/uploads/2023/07/Elephantpng.parspng.com_.png"
+    },
+    {
+      "name": "Tiger",
+      "phoneme": "tahy-ger",
+      "image_link": "https://static.vecteezy.com/system/resources/previews/024/678/934/original/cartoon-tiger-transparent-background-png.png"
+    },
+    {
+      "name": "Giraffe",
+      "phoneme": "juh-raf",
+      "image_link": "https://www.transparentpng.com/download/giraffe/free-download-animal-long-giraffe-png-ItUoNS.png"
+    },
+    {
+      "name": "Monkey",
+      "phoneme": "muhn-kee",
+      "image_link": "https://pngfre.com/wp-content/uploads/monkey-png-image-from-pngfre-23.png"
+    },
+    {
+      "name": "Zebra",
+      "phoneme": "zee-bruh",
+      "image_link": "https://pngfile.net/public/uploads/preview/baby-zebra-cartoon-png-free-download-21565853966k8scjff9ur.png"
+    },
+    {
+      "name": "Kangaroo",
+      "phoneme": "kang-guh-roo",
+      "image_link": "https://img.pikbest.com/origin/09/31/36/11cpIkbEsTQpg.png!sw800"
+    },
+    {
+      "name": "Penguin",
+      "phoneme": "pen-gwin",
+      "image_link": "https://images.vexels.com/media/users/3/140960/isolated/preview/62d6fd568218fe1b7f894932165c9c08-penguin-cartoon.png"
+    },
+    {
+      "name": "Dolphin",
+      "phoneme": "dol-fin",
+      "image_link": "https://www.freeiconspng.com/uploads/dolphin-cartoon-png-24.png"
+    },
+    {
+      "name": "Ostrich",
+      "phoneme": "os-trich",
+      "image_link": "Ostrich"
+    }
+  ]
+}
